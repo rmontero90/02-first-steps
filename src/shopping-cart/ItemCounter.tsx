@@ -3,15 +3,18 @@ import styles from './ItemCounter.module.css';
 
 
 interface Props {
-    name: string;
-    quantity: number;
+    name?: string;
+    quantity?: number;
 }
 
-export const ItemCounter = ({ name, quantity = 1 }: Props) => {
+export const ItemCounter = ({ name = "No name", quantity = 1 }: Props) => {
     
     const [count, setCount] = useState(quantity);
 
-    const handleAdd = () => setCount(count + 1);
+    const handleAdd = () => {
+        console.log('Test')
+        setCount(count + 1)
+    };
     const handleRemove = () => {
         if (count === 1) return;
         
@@ -26,10 +29,10 @@ export const ItemCounter = ({ name, quantity = 1 }: Props) => {
             >
                 {name}
             </span>
-            <div>
-                <button onClick={handleRemove}>-</button>
+            <div><button onClick={handleAdd}>+</button>
                 <span className={styles.itemCount}>{count}</span>
-                <button onClick={handleAdd}>+</button>
+                <button onClick={handleRemove}>-</button>
+                
             </div>
         </section>
     )
