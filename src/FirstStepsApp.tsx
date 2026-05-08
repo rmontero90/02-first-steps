@@ -8,10 +8,11 @@ interface ItemCart {
 const itemsCart: ItemCart[] = [
     { productName: 'Nintendo Switch', quantity: 1 },
     { productName: 'PlayStation 5', quantity: 2 },
-    { productName: 'Xbox Series X', quantity: 1 },
+    { productName: 'Metroid Prime 4', quantity: 1 },
+    { productName: 'Star Fox', quantity: 1 },
 ];
 
-export function FirstStepsApp() {
+export const FirstStepsApp = () => {
     return (
         <>
             <h1>Carrito de Compras</h1> 
